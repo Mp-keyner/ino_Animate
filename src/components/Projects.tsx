@@ -2,7 +2,49 @@ import { Box, Stack, Typography } from '@mui/material'
 import Image from 'next/image'
 import React from 'react'
 
-const ProjectItem = () => {
+interface Project {
+    name: string;
+    img: string;
+    id: number;
+}
+interface ProjectItemInterfaces {
+    name: string;
+    img: string;
+}
+
+const DataProjects:Project[] = [
+    {
+        id: 0,
+        name: 'Fomo Web',
+        img: '/img/fomo_logo.svg'
+    },
+    {
+        id: 1,
+        name: 'Kapital Life | Branding & Social Media',
+        img: '/img/fomo_logo.svg'
+    },
+    {
+        id: 2,
+        name: 'Fomo Web',
+        img: '/img/fomo_logo.svg'
+    },
+    {
+        id: 3,
+        name: 'Fomo Web',
+        img: '/img/fomo_logo.svg'
+    },
+    {
+        id: 4,
+        name: 'Kapital Life | Branding & Social Media',
+        img: '/img/fomo_logo.svg'
+    },
+    {
+        id: 5,
+        name: 'Fomo Web',
+        img: '/img/fomo_logo.svg'
+    },
+]
+const ProjectItem = ({img, name}:ProjectItemInterfaces):JSX.Element => {
     return (
         <Stack
         gap='0.6rem'
@@ -28,12 +70,12 @@ const ProjectItem = () => {
                         xs: "5pc",
                         sm: "3pc",
                     },
-                    background: 'blue'
+                    aspectRatio: 1
                 }}
             >
                 <Image
                     alt='npmbre'
-                    src='/img/Ino_Logo.svg'
+                    src={img}
                     layout="fill"
                     loading="lazy"
                     objectFit="cover"
@@ -41,13 +83,12 @@ const ProjectItem = () => {
             </Box>
             <Typography
                 sx={{
-                    border: '1px solid blue',
                     width: '10rem',
                     fontSize: '0.9rem',
                     fontWeight: 300,
                 }}
             >
-                Kapital Life | Branding & Social Media
+                {name}
             </Typography>
 
         </Stack>
@@ -55,29 +96,29 @@ const ProjectItem = () => {
 }
 
 
-const Projects = () => {
+const Projects = ():JSX.Element => {
     return (
         <Stack
         gap='0.6rem'
             sx={{
-                border: '1px solid red',
                 width:{
                     xs: '90%',
-                    sm: 'auto'
+                    sm: 'auto',
                 },
             }}
         >
             <Typography
                 sx={{
-                    border: '1px solid blue',
-                    fontSize: '0.9rem',
+                    fontSize: {
+                        sm: '0.9rem',
+                        lg: '1.2rem'
+                    },
                     fontWeight: 800,
                 }}
             >
                 Proyectos recientes
             </Typography>
             <Stack 
-            gap='0.6rem'
             sx={{
                 flexDirection:{
                     xs: 'row',
@@ -87,9 +128,14 @@ const Projects = () => {
                     xs: 'scroll',
                     sm: 'hidden'
                 },
-                background: 'red'
+                gap:{
+                    xs: '0.6rem',
+                    sm: '0.6rem',
+                    lg: '2rem'
+                },
+                height: '19pc'
             }}>
-            {[1,2,3,4].map(item =>(<ProjectItem key={item}/>))}
+            {DataProjects.map(item =>(<ProjectItem key={item.id} name={item.name} img={item.img}/>))}
             </Stack>
         </Stack>
     )

@@ -3,8 +3,10 @@ import React from 'react'
 import Projects from './Projects'
 import Image from 'next/image'
 import CardEstrategia from './CardEstrategia'
+import CardSectionGrid from './CardSectionGrid'
+import { CardEstrategiaData, CardSectionGridData } from '../utils/Data'
 
-const MainPages = () => {
+const MainPages = (): JSX.Element => {
     return (
         <>
             <Stack
@@ -13,31 +15,33 @@ const MainPages = () => {
                 height='100vh'
                 gap='4rem'
                 bgcolor='#000'
-                border='1px solid red'
                 position='relative'
                 color='#FFF'
                 sx={{
                     flexDirection: {
                         xs: 'column',
-                        sm: 'row'
+                        sm: 'column',
+                        md: 'row'
                     }
                 }}
             >
                 <Typography
                     sx={{
-                        border: '1px solid red',
                         width: {
                             xs: '90%',
-                            sm: '30rem'
+                            sm: '30rem',
+                            lg: '46rem'
                         },
                         fontSize: {
                             xs: '2.5rem',
-                            sm: '3.6rem'
+                            sm: '3.6rem',
+                            lg: '80px'
                         },
                         fontWeight: 800,
                         lineHeight: {
                             xs: '2.7rem',
-                            sm: '3.7rem'
+                            sm: '3.7rem',
+                            lg: '5.7rem'
                         }
                     }}
                 >¿Necesitas impulsar tu presencia en línea y alcanzar a más clientes?
@@ -59,16 +63,17 @@ const MainPages = () => {
                 alignItems='center'
                 height='100vh'
                 gap='2rem'
-                border='1px solid blue'
                 bgcolor='#FFF'
                 sx={{
                     flexDirection: {
                         xs: 'column',
-                        sm: 'row'
+                        sm: 'column',
+                        md: 'row'
                     },
                     justifyContent: {
                         xs: 'center',
-                        sm: 'flex-start'
+                        sm: 'center',
+                        md: 'flex-start'
                     }
                 }}
             >
@@ -78,12 +83,15 @@ const MainPages = () => {
                         width: {
                             xs: "100%",
                             sm: "45rem",
+                            lg: '49rem',
+                            xl: '80rem'
                         },
                         height: {
                             xs: "16rem",
                             sm: "25rem",
+                            lg: '32rem',
+                            xl: '53rem'
                         },
-                        border: '1px solid red'
                     }}
                 >
                     <Image
@@ -99,19 +107,22 @@ const MainPages = () => {
                         alignItems: {
                             xs: 'center',
                             sm: 'flex-start'
-                        }
+                        },
+                        gap: '1rem'
                     }}
                 >
                     <Typography
                         sx={{
-                            border: '1px solid red',
                             width: {
                                 xs: '90%',
-                                sm: '20rem'
+                                sm: '23rem',
+                                md: '20rem',
+                                lg: '25rem'
                             },
                             fontSize: {
                                 xs: '2.5rem',
-                                sm: '3rem'
+                                sm: '3rem',
+                                lg: '55px'
                             },
                             fontWeight: 500,
                             lineHeight: {
@@ -123,7 +134,6 @@ const MainPages = () => {
                     </Typography>
                     <Typography
                         sx={{
-                            border: '1px solid red',
                             width: {
                                 xs: '90%',
                                 sm: '23rem'
@@ -145,13 +155,13 @@ const MainPages = () => {
             <Stack
                 alignItems='center'
                 gap='2rem'
-                border='1px solid blue'
                 justifyContent='center'
                 bgcolor='#FFF'
                 sx={{
                     flexDirection: {
                         xs: 'column',
-                        sm: 'row'
+                        sm: 'column',
+                        md: 'row'
                     },
                     height: {
                         xs: '96vh',
@@ -163,7 +173,6 @@ const MainPages = () => {
                 <Stack alignItems='center' gap='1rem'>
                     <Typography
                         sx={{
-                            border: '1px solid red',
                             width: {
                                 xs: '90%',
                                 sm: '10rem'
@@ -183,7 +192,6 @@ const MainPages = () => {
                     </Typography>
                     <Typography
                         sx={{
-                            border: '1px solid blue',
                             fontSize: '0.9rem',
                             fontWeight: 300,
                             lineHeight: {
@@ -205,47 +213,73 @@ const MainPages = () => {
                         flexDirection: 'row',
                         overflowX: {
                             xs: 'scroll',
-                            sm: 'hidden'
+                            sm: 'scroll'
                         },
-                        background: 'red',
                         width: {
                             xs: '90%',
-                            sm: 'auto'
+                            sm: '44pc'
                         },
                         height: {
                             xs: '30rem',
                             sm: 'auto'
                         },
                     }}>
-                    {[1, 2, 3].map(item => (<CardEstrategia key={item} />))}
+                    {CardEstrategiaData.map((item, index) => (
+                        <CardEstrategia
+                            title={item.title}
+                            sub_title={item.sub_title}
+                            img={item.img}
+                            key={index} />
+                    ))}
 
                 </Stack>
 
             </Stack>
 
             <Stack
-                alignItems="center"
-                gap="2rem"
-                border="1px solid blue"
-                justifyContent="center"
-                bgcolor="#FFF"
-                display="grid"
-                gridTemplateColumns="repeat(12,1fr)"
-                gridTemplateAreas="a1 a1 b2 b2"
+                bgcolor='#000'
+                color='#FFF'
                 sx={{
-                    height: {
-                        xs: '96vh',
-                        sm: '70vh'
+                    padding: {
+                        xs: '1rem',
+                        sm: '5rem 12rem'
                     }
                 }}
+                gap='2rem'
             >
+                <Typography
+                    sx={{
+                        fontSize: {
+                            xs: '1.5rem',
+                            sm: '2.4rem'
+                        },
+                        fontWeight: 800,
+                        lineHeight: {
+                            xs: '1.5rem',
+                            sm: '2rem'
+                        }
+                    }}
+                >
+                    Nuestro Trabajo
+                </Typography>
 
-            <Stack bgcolor='red' gridArea='a1'>
-                hekhek
-            </Stack>
-            <Stack bgcolor='blue'>
-                hekhek
-            </Stack>
+
+                <Stack
+                    className='Container_Grid'
+                >
+
+                    {CardSectionGridData.map((item, index) => (
+                        <CardSectionGrid
+                            name={item.name}
+                            height={item.height}
+                            title={item.title}
+                            sub_title={item.sub_title}
+                            key={index}
+                            img={item.img}
+                        />))}
+                </Stack>
+
+                Paga para eliminar marca de agua -_-
             </Stack>
 
         </>
