@@ -49,6 +49,7 @@ const CardSectionGrid = ({ name, height, title, sub_title, img }: interfaceCardS
       
         <Image
           alt='npmbre'
+          //@ts-ignore
           src={img}
           layout="fill"
           loading="lazy"
