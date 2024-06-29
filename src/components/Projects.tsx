@@ -33,21 +33,10 @@ const DataProjects:Project[] = [
         name: 'Fomo Web',
         img: '/img/fomo_logo.svg'
     },
-    {
-        id: 4,
-        name: 'Kapital Life | Branding & Social Media',
-        img: '/img/fomo_logo.svg'
-    },
-    {
-        id: 5,
-        name: 'Fomo Web',
-        img: '/img/fomo_logo.svg'
-    },
 ]
 const ProjectItem = ({img, name}:ProjectItemInterfaces):JSX.Element => {
     return (
         <Stack
-        gap='0.6rem'
         sx={{
             flexDirection:{
                 xs: 'column',
@@ -57,6 +46,10 @@ const ProjectItem = ({img, name}:ProjectItemInterfaces):JSX.Element => {
                 xs: 'flex-start',
                 sm: 'center'
             },
+            gap:{
+                sm:'0.6rem',
+                lg:'4rem'
+            }
         }}
         >
             <Box
@@ -83,8 +76,11 @@ const ProjectItem = ({img, name}:ProjectItemInterfaces):JSX.Element => {
             </Box>
             <Typography
                 sx={{
-                    width: '10rem',
-                    fontSize: '0.9rem',
+                    width: '15rem',
+                    fontSize: {
+                        sm:'0.9rem',
+                        lg:'1.2rem'
+                    },
                     fontWeight: 300,
                 }}
             >
@@ -99,7 +95,7 @@ const ProjectItem = ({img, name}:ProjectItemInterfaces):JSX.Element => {
 const Projects = ():JSX.Element => {
     return (
         <Stack
-        gap='0.6rem'
+        gap='1.2rem'
             sx={{
                 width:{
                     xs: '90%',
@@ -111,7 +107,8 @@ const Projects = ():JSX.Element => {
                 sx={{
                     fontSize: {
                         sm: '0.9rem',
-                        lg: '1.2rem'
+                        lg: '1.2rem',
+                        
                     },
                     fontWeight: 800,
                 }}
@@ -131,9 +128,8 @@ const Projects = ():JSX.Element => {
                 gap:{
                     xs: '0.6rem',
                     sm: '0.6rem',
-                    lg: '2rem'
+                    lg: '4rem'
                 },
-                height: '19pc'
             }}>
             {DataProjects.map(item =>(<ProjectItem key={item.id} name={item.name} img={item.img}/>))}
             </Stack>

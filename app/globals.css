@@ -30,7 +30,7 @@
     "a5 a5 a5 a5 a5 a5 a6 a6 a6 a7 a7 a7"
     "a5 a5 a5 a5 a5 a5 a6 a6 a6 a7 a7 a7";
   grid-gap: 32px;
-  width: 100%;
+  background-color: red;
 }
 
 @media (min-width: 768px) {

@@ -33,11 +33,11 @@ const CardEstrategia = ({sub_title, title, img}:interfaceCardEstrategia):JSX.Ele
                 backgroundSize: 'cover',
                 minWidth: {
                     xs: '21rem',
-                    sm: '14rem'
+                    sm: '300.25px'
                 },
                 height:{
                     xs: '100%',
-                    sm: '20rem'
+                    sm: '400.33px'
                 }
             }}
         >

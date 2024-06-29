@@ -32,11 +32,11 @@ const CardSectionGrid = ({ name, height, title, sub_title, img }: interfaceCardS
           xs: height == '560px' ? '-20px' : '0px',
           sm: '0px'
         },
-        height: {
-          xs: height == '560px' ? '133.33333vw' : '118.93333vw',
-          sm: height == '560px' ? '382px' : '353.66px',
-          md: `${height}`
-        },
+         height: {
+           xs: height == '560px' ? '133.33333vw' : '118.93333vw',
+           sm: height == '560px' ? '382px' : '353.66px',
+           md: `${height}`
+         },
         width: {
           xs: height == '560px' ? 'calc(100% + 34px)' : hover ? '205%' : '100%',
           sm: 'auto'

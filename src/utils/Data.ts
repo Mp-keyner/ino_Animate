@@ -66,24 +66,4 @@ export const CardEstrategiaData = [
         sub_title: 'Convertir visitantes en clientes / esclavos.',
         img: '/img/julian.jpeg'
     },
-    {
-        title: 'Gestión de redes sociales',
-        sub_title: 'Convertir visitantes en clientes.',
-        img: '/img/selva.jpg'
-    },
-    {
-        title: 'Gestión de redes sociales',
-        sub_title: 'Convertir visitantes en clientes.',
-        img: '/img/selva.jpg'
-    },
-    {
-        title: 'Gestión de redes sociales',
-        sub_title: 'Convertir visitantes en clientes.',
-        img: '/img/selva.jpg'
-    },
-    {
-        title: 'Gestión de redes sociales',
-        sub_title: 'Convertir visitantes en clientes.',
-        img: '/img/selva.jpg'
-    },
 ]
