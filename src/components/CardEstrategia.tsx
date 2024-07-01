@@ -1,5 +1,6 @@
 'use client'
-import { Stack, Typography } from '@mui/material'
+import { Box, Stack, Typography } from '@mui/material'
+import Image from 'next/image';
 import React from 'react'
 
 interface interfaceCardEstrategia{
@@ -12,6 +13,7 @@ const CardEstrategia = ({sub_title, title, img}:interfaceCardEstrategia):JSX.Ele
     const [hover, setHover] = React.useState(false)
     return (
         <Stack
+        
         onMouseEnter={() => {
             console.log('El cursor está encima del elemento');
             setHover(true)
@@ -25,23 +27,47 @@ const CardEstrategia = ({sub_title, title, img}:interfaceCardEstrategia):JSX.Ele
             padding='1rem'
             sx={{
                 cursor: 'pointer',
-                backgroundImage: `linear-gradient(to top, rgba(0,0,0), rgba(0,0,0,0.4)), url(${img})`,
-                width: hover ? '105%' : '100%',
                 transition: 'all ease-in-out .1s',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 minWidth: {
-                    xs: '21rem',
+                    xs: '18rem',
                     sm: '300.25px'
                 },
                 height:{
-                    xs: '100%',
+                    xs: '27rem',
                     sm: '400.33px'
-                }
+                },
+                scrollSnapAlign: 'center',
+                position: 'relative',
+                overflow: 'hidden'
             }}
         >
-            <Typography
+         
+                <Image
+                    alt='npmbre'
+                    src={img}
+                    layout="fill"
+                    loading="lazy"
+                    objectFit="cover"
+                    style={{
+                        scale: hover ? 1.1 : 1
+                    }}
+                />
+           <Stack
+           position='absolute'
+           zIndex='1'
+           width='100%'
+           height='100%'
+           top={0}
+           left={0}
+           padding='1rem'
+           sx={{
+            backgroundImage: `linear-gradient(to top, rgba(0,0,0), rgba(0,0,0,0.4))`,
+           }}
+           >
+           <Typography
                 sx={{
                     fontSize: '0.9rem',
                     fontWeight: 800,
@@ -57,6 +83,7 @@ const CardEstrategia = ({sub_title, title, img}:interfaceCardEstrategia):JSX.Ele
             >
                 {sub_title}
             </Typography>
+           </Stack>
         </Stack>
     )
 }

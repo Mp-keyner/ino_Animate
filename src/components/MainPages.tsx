@@ -164,7 +164,7 @@ const MainPages = (): JSX.Element => {
                     },
                     height: {
                         xs: '96vh',
-                        sm: '70vh'
+                        sm: '80vh'
                     }
                 }}
             >
@@ -213,6 +213,15 @@ const MainPages = (): JSX.Element => {
                     gap='1rem'
                     sx={{
                         flexDirection: 'row',
+                        overflowX: {
+                            xs: 'scroll',
+                            sm: 'hidden'
+                        },
+                        width: {
+                            xs: '90%',
+                            sm: 'auto'
+                        },
+                        scrollSnapType: 'x mandatory'
                     }}>
                     {CardEstrategiaData.map((item, index) => (
                         <CardEstrategia
@@ -227,7 +236,6 @@ const MainPages = (): JSX.Element => {
             </Stack>
 
             <Stack
-                // bgcolor='#262'
                 bgcolor='#000'
                 color='#FFF'
                 padding='1rem'
@@ -256,8 +264,15 @@ const MainPages = (): JSX.Element => {
                     className='Container_Grid'
                     sx={{
                         width: {
+                            xs: '100%',
                             sm:'75rem',
                             ls: '80rem'
+                        },
+                        height:{
+                            xs: '203rem',
+                            sm: '106rem'
+                            // sm: '97rem'
+                            
                         }
                     }}
                 >
@@ -265,15 +280,14 @@ const MainPages = (): JSX.Element => {
                     {CardSectionGridData.map((item, index) => (
                         <CardSectionGrid
                             name={item.name}
-                            height={item.height}
                             title={item.title}
+                            height={item.height}
+                            width={item.width}
                             sub_title={item.sub_title}
                             key={index}
                             img={item.img}
                         />))}
                 </Stack>
-
-                Paga para eliminar marca de agua -_-
             </Stack>
 
         </>

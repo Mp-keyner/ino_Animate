@@ -1,49 +1,56 @@
 export const CardSectionGridData = [
     {
         name: 'a1',
-        height: '560px',
+        height: '620px',
+        width: '620px',
         title: 'Diseño y desarrollo web',
         sub_title: 'Convertir visitantes en clientes.',
         img: '/img/selva.jpg'
     },
     {
         name: 'a2',
-        height: '351px',
+        height: '404.33px',
+        width: '304px',
         title: 'Diseño y desarrollo web los mejores',
         sub_title: 'Convertir visitantes en clientes.',
         img: '/img/carrote.jpg'
     },
     {
         name: 'a3',
-        height: '351px',
+        height: '404.33px',
+        width: '304px',
         title: 'Diseño y desarrollo web',
         sub_title: 'Convertir visitantes en clientes.',
         img: '/img/carrote.jpg'
     },
     {
         name: 'a4',
-        height: '560px',
+        height: '620px',
+        width: '620px',
         title: 'Diseño y desarrollo web',
         sub_title: 'Convertir visitantes en clientes.',
         img: '/img/carrote.jpg'
     },
     {
         name: 'a5',
-        height: '560px',
+        height: '620px',
+        width: '620px',
         title: 'Diseño y desarrollo web',
         sub_title: 'Convertir visitantes en clientes.',
         img: '/img/carrote.jpg'
     },
     {
         name: 'a6',
-        height: '351px',
+        height: '404.33px',
+        width: '304px',
         title: 'Diseño y desarrollo web',
         sub_title: 'Convertir visitantes en clientes.',
         img: '/img/carrote.jpg'
     },
     {
         name: 'a7',
-        height: '351px',
+        height: '404.33px',
+        width: '304px',
         title: 'Diseño y desarrollo web',
         sub_title: 'Convertir visitantes en clientes.',
         img: '/img/carrote.jpg'

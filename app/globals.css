@@ -2,10 +2,10 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  transition: all ease-in-out 1s;
+  transition: all ease-in-out 0.5s;
 }
 
-*::-webkit-scrollbar {
+/* *::-webkit-scrollbar {
   width: 0.2pc;
   height: 0.2pc;
   background-color: black;
@@ -15,11 +15,12 @@
   width: 0.2pc;
   background-color: #1c1c1c;
   border-radius: 8px;
-}
+} */
 
 .Container_Grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(8,1fr);
   grid-template-areas:
     ". . . a1 a1 a1 a1 a1 a1 . . . "
     ". . . a1 a1 a1 a1 a1 a1 a2 a2 a2"
@@ -30,10 +31,10 @@
     "a5 a5 a5 a5 a5 a5 a6 a6 a6 a7 a7 a7"
     "a5 a5 a5 a5 a5 a5 a6 a6 a6 a7 a7 a7";
   grid-gap: 32px;
-  background-color: red;
 }
 
-@media (min-width: 768px) {
+
+/* @media (min-width: 768px) {
   .Container_Grid {
     grid-template-areas:
       "a1 a1 a1 a1 a1 a1 a1 . . . . . "
@@ -49,7 +50,7 @@
       "a6 a6 a6 a6 a6 a7 a7 a7 a7 a7 . . ";
     grid-gap: 24px;
   }
-}
+} */
 
 @media (max-width:500px) {
   .Container_Grid {

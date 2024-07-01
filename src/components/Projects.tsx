@@ -47,8 +47,12 @@ const ProjectItem = ({img, name}:ProjectItemInterfaces):JSX.Element => {
                 sm: 'center'
             },
             gap:{
+                xs: '1rem',
                 sm:'0.6rem',
                 lg:'4rem'
+            },
+            minWidth:{
+                xs: '9.5rem'
             }
         }}
         >
@@ -56,11 +60,11 @@ const ProjectItem = ({img, name}:ProjectItemInterfaces):JSX.Element => {
                 position="relative"
                 sx={{
                     width: {
-                        xs: "5pc",
+                        xs: "3pc",
                         sm: "3pc",
                     },
                     height: {
-                        xs: "5pc",
+                        xs: "3pc",
                         sm: "3pc",
                     },
                     aspectRatio: 1
@@ -76,7 +80,10 @@ const ProjectItem = ({img, name}:ProjectItemInterfaces):JSX.Element => {
             </Box>
             <Typography
                 sx={{
-                    width: '15rem',
+                    width: {
+                        xs: '100%',
+                        sm: '15rem'
+                    },
                     fontSize: {
                         sm:'0.9rem',
                         lg:'1.2rem'

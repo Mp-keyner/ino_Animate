@@ -6,17 +6,19 @@ import React from 'react'
 interface interfaceCardSectionGrid {
   name: string;
   height: string;
+  width: string;
   img?: string;
   title?: string;
   sub_title?: string;
 }
 
-const CardSectionGrid = ({ name, height, title, sub_title, img }: interfaceCardSectionGrid): JSX.Element => {
+const CardSectionGrid = ({ name, height, width, title, sub_title, img }: interfaceCardSectionGrid): JSX.Element => {
   const [hover, setHover] = React.useState(false)
 
 
   return (
     <Stack
+    className={name}
       onMouseEnter={() => {
         console.log('El cursor está encima del elemento');
         setHover(true)
@@ -29,42 +31,42 @@ const CardSectionGrid = ({ name, height, title, sub_title, img }: interfaceCardS
         cursor: 'pointer',
         gridArea: `${name}`,
         marginLeft: {
-          xs: height == '560px' ? '-20px' : '0px',
+          xs: height == '620px' ? '-20px' : '0px',
           sm: '0px'
         },
-         height: {
-           xs: height == '560px' ? '133.33333vw' : '118.93333vw',
-           sm: height == '560px' ? '382px' : '353.66px',
-           md: `${height}`
-         },
+        height: {
+          xs: height == '560px' ? '133.33333vw' : '118.93333vw',
+          sm: 'auto',
+        },
         width: {
-          xs: height == '560px' ? 'calc(100% + 34px)' : hover ? '205%' : '100%',
-          sm: 'auto'
+          xs: height == '620px' ? 'calc(100% + 34px)' : hover ? '205%' : '100%',
+          sm: 'auto',
         },
         padding: '2rem',
         position: 'relative',
         color: '#FFF',
-        background: 'transparent'
+        background: 'transparent',
+        overflow: 'hidden'
       }}>
-      
-        <Image
-          alt='npmbre'
-          //@ts-ignore
-          src={img}
-          layout="fill"
-          loading="lazy"
-          objectFit="cover"
-        
-        />
-        <Box sx={{
-          background: 'linear-gradient(to top, rgba(0,0,0), rgba(0,0,0,0.1))',
-          width: '100%',
-          height: '100%',
-          position: 'absolute',
-          zIndex: 1,
-          top: 0,
-          left: 0
-        }}/>
+
+      <Image
+        alt='npmbre'
+        //@ts-ignore
+        src={img}
+        layout="fill"
+        loading="lazy"
+        objectFit="cover"
+
+      />
+      <Box sx={{
+        background: 'linear-gradient(to top, rgba(0,0,0), rgba(0,0,0,0.1))',
+        width: '100%',
+        height: '100%',
+        position: 'absolute',
+        zIndex: 1,
+        top: 0,
+        left: 0
+      }} />
       <Typography
         sx={{
           fontSize: '1rem',
