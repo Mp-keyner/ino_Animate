@@ -7,13 +7,19 @@ interface interfaceCardEstrategia{
     title?: string;
     sub_title?: string;
     img: string;
+    name?: string;
   }
 
-const CardEstrategia = ({sub_title, title, img}:interfaceCardEstrategia):JSX.Element => {
+const CardEstrategia = ({sub_title, title, img, name}:interfaceCardEstrategia):JSX.Element => {
     const [hover, setHover] = React.useState(false)
     return (
         <Stack
-        
+        position='relative'
+        padding='0.3rem'
+        className='container_Carta'
+        >
+            <Stack
+        className='carta'
         onMouseEnter={() => {
             console.log('El cursor está encima del elemento');
             setHover(true)
@@ -27,21 +33,20 @@ const CardEstrategia = ({sub_title, title, img}:interfaceCardEstrategia):JSX.Ele
             padding='1rem'
             sx={{
                 cursor: 'pointer',
-                transition: 'all ease-in-out .1s',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 minWidth: {
-                    xs: '18rem',
-                    sm: '300.25px'
+                    xs: '19rem',
+                    sm: '260px'
                 },
                 height:{
                     xs: '27rem',
-                    sm: '400.33px'
+                    sm: '380px'
                 },
                 scrollSnapAlign: 'center',
                 position: 'relative',
-                overflow: 'hidden'
+                overflow: 'hidden',
             }}
         >
          
@@ -52,7 +57,8 @@ const CardEstrategia = ({sub_title, title, img}:interfaceCardEstrategia):JSX.Ele
                     loading="lazy"
                     objectFit="cover"
                     style={{
-                        scale: hover ? 1.1 : 1
+                        scale: hover ? 1.03 : 1,
+                        transition: 'all ease-in-out 0.5s'
                     }}
                 />
            <Stack
@@ -62,7 +68,7 @@ const CardEstrategia = ({sub_title, title, img}:interfaceCardEstrategia):JSX.Ele
            height='100%'
            top={0}
            left={0}
-           padding='1rem'
+           padding='1.5rem'
            sx={{
             backgroundImage: `linear-gradient(to top, rgba(0,0,0), rgba(0,0,0,0.4))`,
            }}
@@ -85,7 +91,9 @@ const CardEstrategia = ({sub_title, title, img}:interfaceCardEstrategia):JSX.Ele
             </Typography>
            </Stack>
         </Stack>
+        <aside className='linea'></aside>
+        <aside className='linea1'></aside>
+        </Stack>
     )
 }
-
 export default CardEstrategia

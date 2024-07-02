@@ -65,7 +65,7 @@ const MainPages = (): JSX.Element => {
 
             <Stack
                 alignItems='center'
-                height='100vh'
+                height='40rem'
                 gap='2rem'
                 bgcolor='#FFF'
                 sx={{
@@ -163,7 +163,7 @@ const MainPages = (): JSX.Element => {
                         md: 'row'
                     },
                     height: {
-                        xs: '96vh',
+                        xs: '40rem',
                         sm: '80vh'
                     }
                 }}
@@ -193,7 +193,7 @@ const MainPages = (): JSX.Element => {
                         sx={{
                             fontSize: {
                                 xs: '0.9rem',
-                                sm:'1.5rem'
+                                sm: '1.5rem'
                             },
                             fontWeight: 300,
                             lineHeight: {
@@ -210,7 +210,6 @@ const MainPages = (): JSX.Element => {
                     </Typography>
                 </Stack>
                 <Stack
-                    gap='1rem'
                     sx={{
                         flexDirection: 'row',
                         overflowX: {
@@ -220,6 +219,10 @@ const MainPages = (): JSX.Element => {
                         width: {
                             xs: '90%',
                             sm: 'auto'
+                        },
+                        gap: {
+                            xs: '0.2rem',
+                            sm: '1rem'
                         },
                         scrollSnapType: 'x mandatory'
                     }}>
@@ -265,14 +268,14 @@ const MainPages = (): JSX.Element => {
                     sx={{
                         width: {
                             xs: '100%',
-                            sm:'75rem',
+                            sm: '75rem',
                             ls: '80rem'
                         },
-                        height:{
-                            xs: '203rem',
+                        height: {
+                            xs: 'auto',
                             sm: '106rem'
                             // sm: '97rem'
-                            
+
                         }
                     }}
                 >

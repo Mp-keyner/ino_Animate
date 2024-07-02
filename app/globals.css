@@ -2,20 +2,64 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  transition: all ease-in-out 0.5s;
 }
 
-/* *::-webkit-scrollbar {
-  width: 0.2pc;
-  height: 0.2pc;
-  background-color: black;
+.container_Carta:hover .linea::after,
+.container_Carta:hover .linea::before{
+  width: 86.5%;
 }
 
-*::-webkit-scrollbar-thumb {
-  width: 0.2pc;
-  background-color: #1c1c1c;
-  border-radius: 8px;
-} */
+.container_Carta:hover .linea1::after,
+.container_Carta:hover .linea1::before{
+  height: 90%;
+}
+.linea::before{
+  transition: width .3s cubic-bezier(.455,.03,.515,.955);
+  content: '';
+  width: 0%;
+  height: 1px;
+  left: 1.2pc;
+  top: 1.2pc;
+  position: absolute;
+  background-color: #FFF;
+  z-index: 2;
+}
+
+.linea::after{
+  transition: width .3s cubic-bezier(.455,.03,.515,.955);
+  content: '';
+  width: 0%;
+  height: 1px;
+  position: absolute;
+  bottom: 1.2pc;
+  right: 1.1pc;
+  background-color: #FFF;
+  z-index: 2;
+}
+
+.linea1::before{
+  transition: height .3s cubic-bezier(.455,.03,.515,.955);
+  content: '';
+  width: 1px;
+  height: 0;
+  left: 1.2pc;
+  top: 1.2pc;
+  position: absolute;
+  background-color: #FFF;
+  z-index: 2;
+}
+
+.linea1::after{
+  transition: height .3s cubic-bezier(.455,.03,.515,.955);
+  content: '';
+  width: 1px;
+  height: 0;
+  position: absolute;
+  bottom: 1.2pc;
+  right: 1.1pc;
+  background-color: #FFF;
+  z-index: 2;
+}
 
 .Container_Grid {
   display: grid;
@@ -33,24 +77,13 @@
   grid-gap: 32px;
 }
 
+.container_Carta{
+  border: 4px solid transparent;
+}
 
-/* @media (min-width: 768px) {
-  .Container_Grid {
-    grid-template-areas:
-      "a1 a1 a1 a1 a1 a1 a1 . . . . . "
-      "a1 a1 a1 a1 a1 a1 a1 a2 a2 a2 a2 a2"
-      "a1 a1 a1 a1 a1 a1 a1 a2 a2 a2 a2 a2"
-      "a3 a3 a3 a3 a3 a4 a4 a4 a4 a4 a4 a4"
-      "a3 a3 a3 a3 a3 a4 a4 a4 a4 a4 a4 a4"
-      ". . . . . a4 a4 a4 a4 a4 a4 a4"
-      ". . a5 a5 a5 a5 a5 a5 a5 . . . "
-      ". . a5 a5 a5 a5 a5 a5 a5 . . . "
-      ". . a5 a5 a5 a5 a5 a5 a5 . . . "
-      "a6 a6 a6 a6 a6 a7 a7 a7 a7 a7 . . "
-      "a6 a6 a6 a6 a6 a7 a7 a7 a7 a7 . . ";
-    grid-gap: 24px;
-  }
-} */
+.container_Carta:hover{
+  border: 4px solid #000;
+}
 
 @media (max-width:500px) {
   .Container_Grid {
@@ -64,5 +97,14 @@
       "a7";
     grid-gap: 20px;
     grid-template-columns: 1fr;
+  }
+  .linea1, .linea{
+    display: none;
+  }
+  .container_Carta:hover{
+    border: 4px solid transparent;
+  }
+  .Container_Grid{
+    grid-template-rows: repeat(7,1fr);
   }
 }
