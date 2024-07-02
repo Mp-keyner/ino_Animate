@@ -65,7 +65,6 @@ const MainPages = (): JSX.Element => {
 
             <Stack
                 alignItems='center'
-                height='40rem'
                 gap='2rem'
                 bgcolor='#FFF'
                 sx={{
@@ -75,9 +74,14 @@ const MainPages = (): JSX.Element => {
                         md: 'row'
                     },
                     justifyContent: {
-                        xs: 'center',
+                        xs: 'flex-end',
                         sm: 'center',
                         md: 'flex-start'
+                    },
+                    height: {
+                        xs: '40rem',
+                        sm: '40rem',
+                        lg: '35rem'
                     }
                 }}
             >
@@ -91,6 +95,7 @@ const MainPages = (): JSX.Element => {
                         height: {
                             xs: "16rem",
                             sm: "25rem",
+                            lg: "30rem"
                         },
                     }}
                 >
@@ -127,7 +132,7 @@ const MainPages = (): JSX.Element => {
                                 xs: '2.7rem',
                                 sm: '57.8px'
                             },
-                            borderBottom: '7px solid #000',
+                            borderBottom: '3px solid #000',
                             paddingBottom: '1rem'
                         }}
                     >Tu aliado estratégico en el mundo digital
@@ -164,12 +169,22 @@ const MainPages = (): JSX.Element => {
                     },
                     height: {
                         xs: '40rem',
-                        sm: '80vh'
+                        sm: '80vh',
+                        lg: '30rem'
                     }
                 }}
             >
 
-                <Stack alignItems='center' gap='1rem' >
+                <Stack
+                    alignItems='center'
+                    gap='1rem'
+                    sx={{
+                        height: {
+                            xs: 'auto',
+                            sm: '24rem'
+                        }
+                    }}
+                >
                     <Typography
                         sx={{
                             width: {
@@ -224,7 +239,12 @@ const MainPages = (): JSX.Element => {
                             xs: '0.2rem',
                             sm: '1rem'
                         },
-                        scrollSnapType: 'x mandatory'
+                        scrollSnapType: 'x mandatory',
+                        scrollbarWidth: 'none', // Oculta la barra de desplazamiento para Firefox
+                        '&::-webkit-scrollbar': {
+                            display: 'none', // Oculta la barra de desplazamiento para navegadores basados en WebKit (Chrome, Safari, Edge, etc.)
+                        },
+                        '&-ms-overflow-style': 'none',
                     }}>
                     {CardEstrategiaData.map((item, index) => (
                         <CardEstrategia
@@ -241,10 +261,18 @@ const MainPages = (): JSX.Element => {
             <Stack
                 bgcolor='#000'
                 color='#FFF'
-                padding='1rem'
-                gap='2rem'
                 alignItems='center'
                 justifyContent='center'
+                sx={{
+                    padding: {
+                        xs: '2rem 1rem',
+                        sm: '6rem 1rem'
+                    },
+                    gap: {
+                        xs: '2rem',
+                        sm: '3rem'
+                    }
+                }}
             >
                 <Typography
                     sx={{
@@ -256,6 +284,11 @@ const MainPages = (): JSX.Element => {
                         lineHeight: {
                             xs: '1.5rem',
                             sm: '2rem'
+                        },
+                        width: {
+                            xs: '90%',
+                            sm: '64%',
+                            lg: '74rem'
                         }
                     }}
                 >

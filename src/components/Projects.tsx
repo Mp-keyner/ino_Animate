@@ -12,7 +12,7 @@ interface ProjectItemInterfaces {
     img: string;
 }
 
-const DataProjects:Project[] = [
+const DataProjects: Project[] = [
     {
         id: 0,
         name: 'Fomo Web',
@@ -34,27 +34,27 @@ const DataProjects:Project[] = [
         img: '/img/fomo_logo.svg'
     },
 ]
-const ProjectItem = ({img, name}:ProjectItemInterfaces):JSX.Element => {
+const ProjectItem = ({ img, name }: ProjectItemInterfaces): JSX.Element => {
     return (
         <Stack
-        sx={{
-            flexDirection:{
-                xs: 'column',
-                sm: 'row'
-            },
-            alignItems:{
-                xs: 'flex-start',
-                sm: 'center'
-            },
-            gap:{
-                xs: '1rem',
-                sm:'0.6rem',
-                lg:'4rem'
-            },
-            minWidth:{
-                xs: '9.5rem'
-            }
-        }}
+            sx={{
+                flexDirection: {
+                    xs: 'column',
+                    sm: 'row'
+                },
+                alignItems: {
+                    xs: 'flex-start',
+                    sm: 'center'
+                },
+                gap: {
+                    xs: '1rem',
+                    sm: '0.6rem',
+                    lg: '4rem'
+                },
+                minWidth: {
+                    xs: '9.5rem'
+                }
+            }}
         >
             <Box
                 position="relative"
@@ -85,8 +85,8 @@ const ProjectItem = ({img, name}:ProjectItemInterfaces):JSX.Element => {
                         sm: '15rem'
                     },
                     fontSize: {
-                        sm:'0.9rem',
-                        lg:'1.2rem'
+                        sm: '0.9rem',
+                        lg: '1.2rem'
                     },
                     fontWeight: 300,
                 }}
@@ -99,12 +99,12 @@ const ProjectItem = ({img, name}:ProjectItemInterfaces):JSX.Element => {
 }
 
 
-const Projects = ():JSX.Element => {
+const Projects = (): JSX.Element => {
     return (
         <Stack
-        gap='1.2rem'
+            gap='1.2rem'
             sx={{
-                width:{
+                width: {
                     xs: '90%',
                     sm: 'auto',
                 },
@@ -115,30 +115,35 @@ const Projects = ():JSX.Element => {
                     fontSize: {
                         sm: '0.9rem',
                         lg: '1.2rem',
-                        
+
                     },
                     fontWeight: 800,
                 }}
             >
                 Proyectos recientes
             </Typography>
-            <Stack 
-            sx={{
-                flexDirection:{
-                    xs: 'row',
-                    sm: 'column'
-                },
-                overflowX: {
-                    xs: 'scroll',
-                    sm: 'hidden'
-                },
-                gap:{
-                    xs: '0.6rem',
-                    sm: '0.6rem',
-                    lg: '4rem'
-                },
-            }}>
-            {DataProjects.map(item =>(<ProjectItem key={item.id} name={item.name} img={item.img}/>))}
+            <Stack
+                sx={{
+                    flexDirection: {
+                        xs: 'row',
+                        sm: 'column'
+                    },
+                    overflowX: {
+                        xs: 'scroll',
+                        sm: 'hidden'
+                    },
+                    scrollbarWidth: 'none', // Oculta la barra de desplazamiento para Firefox
+                    '&::-webkit-scrollbar': {
+                        display: 'none', // Oculta la barra de desplazamiento para navegadores basados en WebKit (Chrome, Safari, Edge, etc.)
+                    },
+                    '&-ms-overflow-style': 'none',
+                    gap: {
+                        xs: '0.6rem',
+                        sm: '0.6rem',
+                        lg: '4rem'
+                    },
+                }}>
+                {DataProjects.map(item => (<ProjectItem key={item.id} name={item.name} img={item.img} />))}
             </Stack>
         </Stack>
     )
