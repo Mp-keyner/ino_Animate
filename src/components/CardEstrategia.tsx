@@ -17,6 +17,9 @@ const CardEstrategia = ({sub_title, title, img, name}:interfaceCardEstrategia):J
         position='relative'
         padding='0.3rem'
         className='container_Carta'
+        sx={{
+            pointerEvents: 'none'
+        }}
         >
             <Stack
         className='carta'

@@ -132,9 +132,10 @@ const Projects = (): JSX.Element => {
                         xs: 'scroll',
                         sm: 'hidden'
                     },
-                    scrollbarWidth: 'none', // Oculta la barra de desplazamiento para Firefox
+                    scrollSnapType: 'x mandatory',
+                    scrollbarWidth: 'none', 
                     '&::-webkit-scrollbar': {
-                        display: 'none', // Oculta la barra de desplazamiento para navegadores basados en WebKit (Chrome, Safari, Edge, etc.)
+                        display: 'none',
                     },
                     '&-ms-overflow-style': 'none',
                     gap: {

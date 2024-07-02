@@ -80,7 +80,7 @@ const MainPages = (): JSX.Element => {
                     },
                     height: {
                         xs: '40rem',
-                        sm: '40rem',
+                        sm: '50rem',
                         lg: '35rem'
                     }
                 }}
@@ -169,7 +169,8 @@ const MainPages = (): JSX.Element => {
                     },
                     height: {
                         xs: '40rem',
-                        sm: '80vh',
+                        sm: '55rem',
+                        md: '80vh',
                         lg: '30rem'
                     }
                 }}
@@ -229,20 +230,22 @@ const MainPages = (): JSX.Element => {
                         flexDirection: 'row',
                         overflowX: {
                             xs: 'scroll',
-                            sm: 'hidden'
+                            sm: 'scroll',
+                            md: 'hidden'
                         },
                         width: {
                             xs: '90%',
-                            sm: 'auto'
+                            sm: '40rem',
+                            md: 'auto'
                         },
                         gap: {
                             xs: '0.2rem',
                             sm: '1rem'
                         },
                         scrollSnapType: 'x mandatory',
-                        scrollbarWidth: 'none', // Oculta la barra de desplazamiento para Firefox
+                        scrollbarWidth: 'none',
                         '&::-webkit-scrollbar': {
-                            display: 'none', // Oculta la barra de desplazamiento para navegadores basados en WebKit (Chrome, Safari, Edge, etc.)
+                            display: 'none',
                         },
                         '&-ms-overflow-style': 'none',
                     }}>
@@ -301,14 +304,13 @@ const MainPages = (): JSX.Element => {
                     sx={{
                         width: {
                             xs: '100%',
-                            sm: '75rem',
+                            sm: '100%',
+                            md: '75rem',
                             ls: '80rem'
                         },
                         height: {
                             xs: 'auto',
                             sm: '106rem'
-                            // sm: '97rem'
-
                         }
                     }}
                 >
@@ -325,7 +327,22 @@ const MainPages = (): JSX.Element => {
                         />))}
                 </Stack>
             </Stack>
-
+            <Stack bgcolor='#FFF' alignItems='center'>
+                <Stack sx={{
+                    width: {
+                        xs: '100%',
+                        sm: '100%',
+                        md: '75rem',
+                        ls: '80rem'
+                    },
+                }}>
+                    <iframe
+                        src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1kfO7cIALQI_nDEhLvLvo4ukCX1sO_xjMrEJY0eHqBWfQhK5Rv8SpHiWKwhZUgmc7Ku078bR8b?gv=true"
+                        width="100%"
+                        height="600"
+                    ></iframe>
+                </Stack>
+            </Stack>
         </>
     )
 }
